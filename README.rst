@@ -6,6 +6,13 @@ This is a simple integration with `Postmark <https://postmarkapp.com/>`_ for Fla
 .. image:: https://travis-ci.org/Stranger6667/Flask-Postmark.png?branch=master
    :target: https://travis-ci.org/Stranger6667/Flask-Postmark
 
+.. image:: https://codecov.io/github/Stranger6667/Flask-Postmark/coverage.svg?branch=master
+   :target: https://codecov.io/github/Stranger6667/Flask-Postmark?branch=master
+   :alt: Coverage Status
+
+.. image:: https://img.shields.io/pypi/v/Flask-Postmark.svg
+    :target: https://pypi.python.org/pypi/Flask-Postmark
+    :alt: Latest PyPI version
 
 Installation
 ------------
@@ -18,7 +25,7 @@ Installing is simple with pip::
 Usage
 -----
 
-To send an email in your Flask application::
+To send an email in your Flask application:
 
 .. code-block:: python
 
