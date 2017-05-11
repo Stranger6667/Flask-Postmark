@@ -1,10 +1,8 @@
 # coding: utf-8
-from flask import current_app
+from flask import current_app, _app_ctx_stack as stack
 
 from postmarker._compat import get_args
 from postmarker.core import PostmarkClient
-
-from ._compat import stack
 
 
 class Postmark(object):
@@ -15,10 +13,7 @@ class Postmark(object):
             self.init_app(app)
 
     def init_app(self, app):
-        if hasattr(app, 'teardown_appcontext'):
-            app.teardown_appcontext(self.teardown)
-        else:
-            app.teardown_request(self.teardown)
+        app.teardown_appcontext(self.teardown)
 
     def get_postmark_client(self):
         kwargs = dict(
