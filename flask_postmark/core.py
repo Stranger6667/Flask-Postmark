@@ -1,5 +1,5 @@
 # coding: utf-8
-from flask import current_app, _app_ctx_stack as stack
+from flask import _app_ctx_stack as stack, current_app
 
 from postmarker._compat import get_args
 from postmarker.core import PostmarkClient
