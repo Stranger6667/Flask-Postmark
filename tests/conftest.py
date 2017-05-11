@@ -1,7 +1,6 @@
 # coding: utf-8
 import pytest
-from flask import Flask, request, json
-
+from flask import Flask, json, request
 from flask_postmark import Postmark
 
 

@@ -1,7 +1,7 @@
 # coding: utf-8
-import json
-
 import pytest
+
+from flask import json
 
 
 BODY = '<html><body><strong>Hello</strong> dear Postmark user.</body></html>'
