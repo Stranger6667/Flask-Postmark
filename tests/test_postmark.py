@@ -2,6 +2,8 @@
 import pytest
 from flask import json
 
+from flask_postmark import Postmark
+
 
 BODY = '<html><body><strong>Hello</strong> dear Postmark user.</body></html>'
 SUBJECT = 'Postmark test'
@@ -15,7 +17,7 @@ DATA = {
 }
 
 
-class TestSend:
+class TestPostmark:
 
     @pytest.fixture(autouse=True)
     def setup(self, test_client):
@@ -42,3 +44,9 @@ class TestSend:
             'Attachments': [], 'From': SENDER, 'Headers': [], 'Subject': SUBJECT, 'HtmlBody': BODY, 'To': RECEIVER
         }
         assert data == [expected, expected]
+
+    def test_empty_app(self, app):
+        assert len(app.teardown_appcontext_funcs) == 1
+        postmark = Postmark()
+        postmark.init_app(app)
+        assert len(app.teardown_appcontext_funcs) == 2
