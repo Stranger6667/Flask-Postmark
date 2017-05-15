@@ -52,3 +52,12 @@ To send an email in your Flask application:
             HtmlBody='<html><body><strong>Hello</strong> dear Postmark user.</body></html>'
         )
         return b'OK'
+
+Documentation
+=============
+
+You can view the documentation online at:
+
+- https://flask-postmark.readthedocs.io/en/latest/
+
+Or you can look at the docs/ directory in the repository.
