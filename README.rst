@@ -10,6 +10,10 @@ This is a simple integration with `Postmark <https://postmarkapp.com/>`_ for Fla
    :target: https://codecov.io/github/Stranger6667/Flask-Postmark?branch=master
    :alt: Coverage Status
 
+.. image:: https://readthedocs.org/projects/flask-postmark/badge/?version=stable
+   :target: http://flask-postmark.readthedocs.io/en/stable/?badge=stable
+   :alt: Documentation Status
+
 .. image:: https://img.shields.io/pypi/v/Flask-Postmark.svg
     :target: https://pypi.python.org/pypi/Flask-Postmark
     :alt: Latest PyPI version
