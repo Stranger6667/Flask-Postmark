@@ -12,6 +12,7 @@ class Postmark(object):
             self.init_app(app)
 
     def init_app(self, app):
+        app.extensions['postmark'] = self
         app.teardown_appcontext(self.teardown)
 
     def teardown(self, exception):
