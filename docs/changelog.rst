@@ -16,7 +16,7 @@ Added
 
 - Initial release.
 
-.. _Unreleased: https://github.com/Stranger6667/Flask-Postmark/compare/0.11.2...HEAD
+.. _Unreleased: https://github.com/Stranger6667/Flask-Postmark/compare/0.1.0...HEAD
 
 
 .. _#6: https://github.com/Stranger6667/Flask-Postmark/issues/6
