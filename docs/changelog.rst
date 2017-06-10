@@ -10,6 +10,7 @@ Added
 ~~~~~
 
 - Register the extension on the app. `#6`_
+- Use ``self.app`` as a fallback. `#5`_
 
 0.1.0 - 2017-05-11
 ------------------
@@ -20,3 +21,4 @@ Added
 
 
 .. _#6: https://github.com/Stranger6667/Flask-Postmark/issues/6
+.. _#5: https://github.com/Stranger6667/Flask-Postmark/issues/5
