@@ -24,6 +24,10 @@ def app(server_token, postmark_request):
         postmark.send(**data)
         return make_response()
 
+    @app.route('/is_same_client', methods=['POST'])
+    def is_same_client():
+        return json.dumps(postmark.client is postmark.client)
+
     @app.route('/send_batch', methods=['POST'])
     def send_batch():
         data = request.get_json()

@@ -44,8 +44,19 @@ class TestPostmark:
         }
         assert data == [expected, expected]
 
+    def test_is_same_client(self):
+        assert self.post('/is_same_client', DATA) is True
+
     def test_empty_app(self, app):
         assert len(app.teardown_appcontext_funcs) == 1
         postmark = Postmark()
         postmark.init_app(app)
         assert len(app.teardown_appcontext_funcs) == 2
+
+    def test_get_app(self, app):
+        postmark = Postmark(app)
+        assert postmark._get_app() is app
+
+    def test_no_context(self, app):
+        postmark = Postmark(app)
+        assert postmark.client is None

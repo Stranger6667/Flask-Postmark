@@ -5,6 +5,7 @@ from postmarker.core import PostmarkClient
 
 
 class Postmark(object):
+    app = None
 
     def __init__(self, app=None):
         self.app = app
@@ -14,6 +15,11 @@ class Postmark(object):
     def init_app(self, app):
         app.extensions['postmark'] = self
         app.teardown_appcontext(self.teardown)
+
+    def _get_app(self):
+        if not current_app and self.app:
+            return self.app
+        return current_app
 
     def teardown(self, exception):
         ctx = stack.top
@@ -25,7 +31,8 @@ class Postmark(object):
         ctx = stack.top
         if ctx is not None:
             if not hasattr(ctx, 'postmark_client'):
-                ctx.postmark_client = PostmarkClient.from_config(current_app.config, is_uppercase=True)
+                app = self._get_app()
+                ctx.postmark_client = PostmarkClient.from_config(app.config, is_uppercase=True)
             return ctx.postmark_client
 
     def send(self, *args, **kwargs):
