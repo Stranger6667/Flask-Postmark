@@ -4,7 +4,7 @@ from flask import _app_ctx_stack as stack, current_app
 from postmarker.core import PostmarkClient
 
 
-class Postmark(object):
+class Postmark(object):  # pylint: disable=useless-object-inheritance
     app = None
 
     def __init__(self, app=None):
@@ -13,7 +13,7 @@ class Postmark(object):
             self.init_app(app)
 
     def init_app(self, app):
-        app.extensions['postmark'] = self
+        app.extensions["postmark"] = self
         app.teardown_appcontext(self.teardown)
 
     def _get_app(self):
@@ -23,16 +23,18 @@ class Postmark(object):
 
     def teardown(self, exception):
         ctx = stack.top
-        if hasattr(ctx, 'postmark_client'):
+        if hasattr(ctx, "postmark_client"):
             ctx.postmark_client.session.close()
 
     @property
     def client(self):
         ctx = stack.top
         if ctx is not None:
-            if not hasattr(ctx, 'postmark_client'):
+            if not hasattr(ctx, "postmark_client"):
                 app = self._get_app()
-                ctx.postmark_client = PostmarkClient.from_config(app.config, is_uppercase=True)
+                ctx.postmark_client = PostmarkClient.from_config(
+                    app.config, is_uppercase=True
+                )
             return ctx.postmark_client
 
     def send(self, *args, **kwargs):
