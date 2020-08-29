@@ -24,7 +24,6 @@ To send an email in your Flask application:
     from flask_postmark import Postmark
 
     app = Flask(__name__)
-
     app.config["POSTMARK_SERVER_TOKEN"] = "<replace with your server token>"
 
     postmark = Postmark(app)
@@ -58,7 +57,7 @@ Or you can look at the docs/ directory in the repository.
 .. |Python versions| image:: https://img.shields.io/pypi/pyversions/flask-postmark.svg
    :target: https://pypi.org/project/flask-postmark/
 .. |Docs| image:: https://readthedocs.org/projects/flask-postmark/badge/?version=stable
-   :target: https://flask-postmark.readthedocs.io/en/stable/?badge=stable
+   :target: https://flask-postmark.readthedocs.io/en/stable/
    :alt: Documentation Status
 .. |License| image:: https://img.shields.io/pypi/l/flask-postmark.svg
    :target: https://opensource.org/licenses/MIT
