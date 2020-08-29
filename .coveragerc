@@ -1,5 +1,6 @@
 [run]
 branch = true
+parallel = true
 
 [report]
 show_missing = true

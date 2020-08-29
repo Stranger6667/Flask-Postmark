@@ -34,6 +34,7 @@ class TestPostmark:
             "From": SENDER,
             "Headers": [],
             "HtmlBody": BODY,
+            "Metadata": None,
             "Tag": None,
             "TextBody": None,
             "To": RECEIVER,
