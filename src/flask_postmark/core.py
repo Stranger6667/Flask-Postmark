@@ -1,9 +1,8 @@
-# coding: utf-8
 from flask import _app_ctx_stack as stack, current_app
 from postmarker.core import PostmarkClient
 
 
-class Postmark(object):  # pylint: disable=useless-object-inheritance
+class Postmark:
     app = None
 
     def __init__(self, app=None):
