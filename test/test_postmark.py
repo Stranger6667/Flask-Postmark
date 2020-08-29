@@ -71,4 +71,9 @@ class TestPostmark:
 
     def test_no_context(self, app):
         postmark = Postmark(app)
-        assert postmark.client is None
+        with pytest.raises(RuntimeError):
+            postmark.client
+
+    def test_teardown(self, app):
+        postmark = Postmark(app)
+        assert postmark.teardown(None) is None
