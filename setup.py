@@ -2,14 +2,14 @@
 import os
 import re
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
 def get_version():
-    with open(os.path.join(ROOT_DIR, "flask_postmark", "__init__.py")) as fd:
+    with open(os.path.join(ROOT_DIR, "src", "flask_postmark", "__init__.py")) as fd:
         content = fd.read()
         return re.findall(r"__version__ = \"(.+)\"", content)[0]
 
@@ -24,7 +24,8 @@ setup(
     description="Postmark Flask extension",
     keywords=["flask", "postmark", "email"],
     long_description=__doc__,
-    packages=["flask_postmark"],
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     zip_safe=False,
     include_package_data=True,
     platforms="any",
