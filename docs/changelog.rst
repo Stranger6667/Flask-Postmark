@@ -6,6 +6,14 @@ Changelog
 `Unreleased`_
 -------------
 
+`0.3.1`_ - 2020-08-29
+---------------------
+
+Fixed
+~~~~~
+
+- Documentation on Read The Docs
+
 `0.3.0`_ - 2020-08-29
 ---------------------
 
@@ -37,7 +45,8 @@ Added
 
 - Initial release.
 
-.. _Unreleased: https://github.com/Stranger6667/Flask-Postmark/compare/v0.3.0...HEAD
+.. _Unreleased: https://github.com/Stranger6667/Flask-Postmark/compare/v0.3.1...HEAD
+.. _0.3.1: https://github.com/Stranger6667/Flask-Postmark/compare/0.3.0...v0.3.1
 .. _0.3.0: https://github.com/Stranger6667/Flask-Postmark/compare/0.2.0...v0.3.0
 .. _0.2.0: https://github.com/Stranger6667/Flask-Postmark/compare/0.1.0...0.2.0
 
