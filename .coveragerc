@@ -1,6 +1,12 @@
 [run]
 branch = true
 parallel = true
+source = flask_postmark
+
+[paths]
+source =
+   src/flask_postmark
+   .tox/*/lib/python*/site-packages/flask_postmark
 
 [report]
 show_missing = true
