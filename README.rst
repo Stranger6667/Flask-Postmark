@@ -1,22 +1,9 @@
 Flask Postmark
 ==============
 
+|Build| |Coverage| |Version| |Python versions| |Docs| |License|
+
 This is a simple integration with `Postmark <https://postmarkapp.com/>`_ for Flask applications.
-
-.. image:: https://travis-ci.org/Stranger6667/Flask-Postmark.png?branch=master
-   :target: https://travis-ci.org/Stranger6667/Flask-Postmark
-
-.. image:: https://codecov.io/github/Stranger6667/Flask-Postmark/coverage.svg?branch=master
-   :target: https://codecov.io/github/Stranger6667/Flask-Postmark?branch=master
-   :alt: Coverage Status
-
-.. image:: https://readthedocs.org/projects/flask-postmark/badge/?version=stable
-   :target: http://flask-postmark.readthedocs.io/en/stable/?badge=stable
-   :alt: Documentation Status
-
-.. image:: https://img.shields.io/pypi/v/Flask-Postmark.svg
-    :target: https://pypi.python.org/pypi/Flask-Postmark
-    :alt: Latest PyPI version
 
 Installation
 ------------
@@ -61,3 +48,17 @@ You can view the documentation online at:
 - https://flask-postmark.readthedocs.io/en/latest/
 
 Or you can look at the docs/ directory in the repository.
+
+.. |Build| image:: https://github.com/Stranger6667/flask-postmark/workflows/build/badge.svg
+   :target: https://github.com/Stranger6667/flask-postmark/actions
+.. |Coverage| image:: https://codecov.io/github/Stranger6667/flask-postmark/coverage.svg?branch=master
+    :target: https://codecov.io/github/Stranger6667/flask-postmark?branch=master
+.. |Version| image:: https://img.shields.io/pypi/v/flask-postmark.svg
+   :target: https://pypi.org/project/flask-postmark/
+.. |Python versions| image:: https://img.shields.io/pypi/pyversions/flask-postmark.svg
+   :target: https://pypi.org/project/flask-postmark/
+.. |Docs| image:: https://readthedocs.org/projects/flask-postmark/badge/?version=stable
+   :target: https://flask-postmark.readthedocs.io/en/stable/?badge=stable
+   :alt: Documentation Status
+.. |License| image:: https://img.shields.io/pypi/l/flask-postmark.svg
+   :target: https://opensource.org/licenses/MIT
