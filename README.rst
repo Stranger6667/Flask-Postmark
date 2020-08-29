@@ -23,22 +23,22 @@ To send an email in your Flask application:
     from flask import Flask
     from flask_postmark import Postmark
 
-
     app = Flask(__name__)
 
-    app.config['POSTMARK_SERVER_TOKEN'] = '<replace with your server token>'
+    app.config["POSTMARK_SERVER_TOKEN"] = "<replace with your server token>"
 
     postmark = Postmark(app)
 
-    @app.route('/send', methods=['POST'])
+
+    @app.route("/send", methods=["POST"])
     def send():
         postmark.send(
-            From='sender@example.com',
-            To='receiver@example.com',
-            Subject='Postmark test',
-            HtmlBody='<html><body><strong>Hello</strong> dear Postmark user.</body></html>'
+            From="sender@example.com",
+            To="receiver@example.com",
+            Subject="Postmark test",
+            HtmlBody="<html><body><strong>Hello</strong> dear Postmark user.</body></html>",
         )
-        return b'OK'
+        return b"OK"
 
 Documentation
 =============

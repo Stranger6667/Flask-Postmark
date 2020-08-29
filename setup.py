@@ -8,10 +8,13 @@ ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
 def get_version():
-    with open(os.path.join(ROOT_DIR, "src", "flask_postmark", "__init__.py")) as fd:
-        content = fd.read()
+    with open(os.path.join(ROOT_DIR, "src", "flask_postmark", "__init__.py")) as f:
+        content = f.read()
         return re.findall(r"__version__ = \"(.+)\"", content)[0]
 
+
+with open(os.path.join(ROOT_DIR, "README.rst")) as fd:
+    long_description = fd.read()
 
 setup(
     name="Flask-Postmark",
@@ -21,8 +24,9 @@ setup(
     author="Dmitry Dygalo",
     author_email="dadygalo@gmail.com",
     description="Postmark Flask extension",
+    long_description=long_description,
+    long_description_content_type="text/x-rst",
     keywords=["flask", "postmark", "email"],
-    long_description=__doc__,
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     zip_safe=False,
