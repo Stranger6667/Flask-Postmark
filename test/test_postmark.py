@@ -1,8 +1,6 @@
-# coding: utf-8
 import pytest
 
 from flask_postmark import Postmark
-
 
 BODY = "<html><body><strong>Hello</strong> dear Postmark user.</body></html>"
 SUBJECT = "Postmark test"
