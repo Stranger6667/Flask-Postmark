@@ -1,6 +1,8 @@
 from typing import Any, List, Optional
 
-from flask import Flask, _app_ctx_stack as stack, current_app  # type: ignore
+from flask import Flask
+from flask import _app_ctx_stack as stack  # type: ignore
+from flask import current_app
 from postmarker.core import PostmarkClient
 
 
@@ -32,9 +34,7 @@ class Postmark:
         if ctx is not None:
             if not hasattr(ctx, "postmark_client"):
                 app = self._get_app()
-                ctx.postmark_client = PostmarkClient.from_config(
-                    app.config, is_uppercase=True
-                )
+                ctx.postmark_client = PostmarkClient.from_config(app.config, is_uppercase=True)
             return ctx.postmark_client
         raise RuntimeError("Context stack is empty")
 

@@ -3,7 +3,6 @@ import re
 
 from setuptools import find_packages, setup
 
-
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 

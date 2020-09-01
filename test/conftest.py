@@ -1,4 +1,3 @@
-# coding: utf-8
 import pytest
 from flask import Flask, json, request
 
@@ -51,9 +50,7 @@ def test_client(app):
 @pytest.fixture
 def post(test_client):
     def inner(url, data=None):
-        response = test_client.post(
-            url, data=json.dumps(data), content_type="application/json"
-        )
+        response = test_client.post(url, data=json.dumps(data), content_type="application/json")
         return json.loads(response.data)
 
     return inner
