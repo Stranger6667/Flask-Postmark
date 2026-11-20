@@ -36,12 +36,6 @@ To send an email in your Flask application:
         )
         return b"OK"
 
-.. toctree::
-   :maxdepth: 2
-
-   changelog
-
-
 Indices and tables
 ==================
 
