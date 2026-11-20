@@ -4,7 +4,6 @@
 [![Coverage](https://codecov.io/github/Stranger6667/Flask-Postmark/coverage.svg?branch=master)](https://codecov.io/github/Stranger6667/Flask-Postmark?branch=master)
 [![Version](https://img.shields.io/pypi/v/flask-postmark.svg)](https://pypi.org/project/flask-postmark/)
 [![Python versions](https://img.shields.io/pypi/pyversions/flask-postmark.svg)](https://pypi.org/project/flask-postmark/)
-[![Docs](https://readthedocs.org/projects/flask-postmark/badge/?version=stable)](https://flask-postmark.readthedocs.io/en/stable/)
 [![License](https://img.shields.io/pypi/l/flask-postmark.svg)](https://opensource.org/licenses/MIT)
 
 [Postmark](https://postmarkapp.com/) integration for Flask, built on [Postmarker](https://github.com/Stranger6667/postmarker).
