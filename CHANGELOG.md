@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/Stranger6667/Flask-Postmark/compare/v0.3.1...HEAD)
+## [Unreleased](https://github.com/Stranger6667/Flask-Postmark/compare/v1.0.0...HEAD)
+
+## [1.0.0](https://github.com/Stranger6667/Flask-Postmark/compare/v0.3.1...v1.0.0) - 2026-11-20
 
 ### Added
 
