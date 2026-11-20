@@ -29,6 +29,7 @@ classifiers = [
   "Topic :: Communications :: Email",
   "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
   "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
 ]
 dependencies = ["Flask>=3.0", "postmarker>=2.0"]
 
