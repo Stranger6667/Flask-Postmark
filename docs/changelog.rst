@@ -6,6 +6,16 @@ Changelog
 `Unreleased`_
 -------------
 
+Added
+~~~~~
+
+- Support for Python 3.11–3.15.
+
+Removed
+~~~~~~~
+
+- Support for Python 3.5–3.10.
+
 `0.3.1`_ - 2020-08-29
 ---------------------
 
