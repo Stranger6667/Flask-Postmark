@@ -60,7 +60,7 @@ def test_empty_app(app):
 def test_no_context(app):
     postmark = Postmark(app)
     with pytest.raises(RuntimeError):
-        postmark.client
+        _ = postmark.client
 
 
 def test_teardown_closes_session(app):

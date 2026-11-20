@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Flask-Postmark documentation build configuration file, created by
 # sphinx-quickstart on Mon May 15 14:27:50 2017.
@@ -51,7 +50,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Flask-Postmark"
-copyright = "%s, Dmitry Dygalo" % date.today().year
+copyright = f"{date.today().year}, Dmitry Dygalo"
 author = "Dmitry Dygalo"
 
 # The version info for the project you're documenting, acts as replacement for
