@@ -1,15 +1,11 @@
-from typing import Any, List, Optional
+from typing import Any
 
-from flask import Flask
-from flask import _app_ctx_stack as stack  # type: ignore
-from flask import current_app
+from flask import Flask, current_app, g, has_app_context
 from postmarker.core import PostmarkClient
 
 
 class Postmark:
-    app = None
-
-    def __init__(self, app: Optional[Flask] = None) -> None:
+    def __init__(self, app: Flask | None = None) -> None:
         self.app = app
         if app is not None:
             self.init_app(app)
@@ -18,28 +14,22 @@ class Postmark:
         app.extensions["postmark"] = self
         app.teardown_appcontext(self.teardown)
 
-    def _get_app(self) -> Flask:
-        if not current_app and self.app:
-            return self.app
-        return current_app
-
-    def teardown(self, exception: Any) -> None:
-        ctx = stack.top
-        if hasattr(ctx, "postmark_client"):
-            ctx.postmark_client.session.close()
+    def teardown(self, exception: BaseException | None) -> None:
+        client = g.pop("postmark_client", None)
+        if client is not None:
+            client.session.close()
 
     @property
     def client(self) -> PostmarkClient:
-        ctx = stack.top
-        if ctx is not None:
-            if not hasattr(ctx, "postmark_client"):
-                app = self._get_app()
-                ctx.postmark_client = PostmarkClient.from_config(app.config, is_uppercase=True)
-            return ctx.postmark_client
-        raise RuntimeError("Context stack is empty")
+        if not has_app_context():
+            raise RuntimeError("Working outside of application context")
+        client: PostmarkClient | None = g.get("postmark_client")
+        if client is None:
+            client = g.postmark_client = PostmarkClient.from_config(current_app.config, is_uppercase=True)
+        return client
 
     def send(self, *args: Any, **kwargs: Any) -> Any:
         return self.client.emails.send(*args, **kwargs)
 
-    def send_batch(self, *args: Any, **kwargs: Any) -> List:
+    def send_batch(self, *args: Any, **kwargs: Any) -> list[Any]:
         return self.client.emails.send_batch(*args, **kwargs)

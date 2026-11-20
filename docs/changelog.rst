@@ -11,10 +11,20 @@ Added
 
 - Support for Python 3.11–3.15.
 
+Changed
+~~~~~~~
+
+- Require Flask 3.0 or newer and postmarker 2.0 or newer.
+
 Removed
 ~~~~~~~
 
 - Support for Python 3.5–3.10.
+
+Fixed
+~~~~~
+
+- ``ImportError`` on Flask 2.3+, where ``_app_ctx_stack`` was removed. `#20`_
 
 `0.3.1`_ - 2020-08-29
 ---------------------
@@ -61,5 +71,6 @@ Added
 .. _0.2.0: https://github.com/Stranger6667/Flask-Postmark/compare/0.1.0...0.2.0
 
 
+.. _#20: https://github.com/Stranger6667/Flask-Postmark/issues/20
 .. _#6: https://github.com/Stranger6667/Flask-Postmark/issues/6
 .. _#5: https://github.com/Stranger6667/Flask-Postmark/issues/5

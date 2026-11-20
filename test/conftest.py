@@ -8,7 +8,6 @@ from flask_postmark import Postmark
 def app(server_token, postmark_request):
     app = Flask(__name__)
     app.config["POSTMARK_SERVER_TOKEN"] = server_token
-    app.config["JSONIFY_PRETTYPRINT_REGULAR"] = False
     postmark = Postmark(app)
 
     def make_response():

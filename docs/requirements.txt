@@ -1,2 +1,2 @@
-Flask
-postmarker >= 0.11.2
+Flask >= 3.0
+postmarker >= 2.0
