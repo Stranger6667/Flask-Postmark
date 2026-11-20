@@ -30,7 +30,7 @@ classifiers = [
   "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["Flask", "postmarker>=0.11.2"]
+dependencies = ["Flask>=3.0", "postmarker>=2.0"]
 
 [project.optional-dependencies]
 tests = ["coverage[toml]>=7.2", "pytest>=8"]

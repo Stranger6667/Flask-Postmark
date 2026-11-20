@@ -22,6 +22,7 @@ def test_send(post):
         "Headers": [],
         "HtmlBody": BODY,
         "Metadata": None,
+        "MessageStream": None,
         "Tag": None,
         "TextBody": None,
         "To": RECEIVER,
@@ -56,17 +57,20 @@ def test_empty_app(app):
     assert len(app.teardown_appcontext_funcs) == 2
 
 
-def test_get_app(app):
-    postmark = Postmark(app)
-    assert postmark._get_app() is app
-
-
 def test_no_context(app):
     postmark = Postmark(app)
     with pytest.raises(RuntimeError):
         postmark.client
 
 
-def test_teardown(app):
-    postmark = Postmark(app)
-    assert postmark.teardown(None) is None
+def test_teardown_closes_session(app):
+    postmark = app.extensions["postmark"]
+    closed = []
+    with app.app_context():
+        postmark.client.session.close = lambda: closed.append(True)
+    assert closed == [True]
+
+
+def test_teardown_without_client(app):
+    with app.app_context():
+        pass
